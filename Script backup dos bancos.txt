@@ -1,0 +1,24 @@
+-- Comandos via prompt de comando 
+-- Entrando no diretório
+cd C:\Program Files\MySQL\MySQL Server 8.0\bin
+
+
+-- Dump  backup do banco ecommerce
+
+mysqldump -u root -p --databases ecommerce > backup_ecommerce.sql
+
+
+
+
+-- Dump recovery do banco ecommerce
+
+mysql -u root -p < backup_ecommerce.sql
+
+
+
+
+Dump backup de diferentes bancos com rotinas
+
+mysqldump --routines --triggers -u root -p ecommerce > backup_eco_rotinas.sql
+
+mysqldump --events --routines --triggers -u root -p oficina > backup_ofic_rotinas.sql
